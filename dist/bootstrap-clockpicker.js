@@ -710,11 +710,7 @@
 		this[this.currentView] = value;
 		this.viewMap[this.currentView].span.html(leadingZero(value));
 		var last = this.input.prop('value')
-		var v = moment()
-			.hours(this['hours'])
-			.minutes(this['minutes'])
-			.seconds(this['seconds'])
-			.format(this.options.format || 'HH:mm:ss');
+		var v = leadingZero(this['hours']) + ":" + leadingZero(this['minutes']) + ":" + leadingZero(this['seconds']);
 
 		if (v !== last) {
 			this.input.prop('value', v);
